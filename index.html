@@ -141,5 +141,103 @@
     <script src="js/breadcrumbs.js"></script>
     <script src="js/script.js"></script>
     <!-- genreTags.js will be loaded dynamically after demo.html is loaded -->
-  </body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<style>
+    .tg-popup {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 280px;
+        background-color: #ffffff;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        border-radius: 12px;
+        z-index: 10000;
+        padding: 18px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        animation: slideUp 0.6s ease-out;
+    }
+
+    @keyframes slideUp {
+        from { transform: translateY(100px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    .tg-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+
+    .tg-title {
+        font-weight: bold;
+        color: #0088cc;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .tg-close {
+        cursor: pointer;
+        color: #ccc;
+        font-size: 22px;
+        line-height: 1;
+    }
+
+    .tg-close:hover { color: #888; }
+
+    .tg-body {
+        font-size: 14px;
+        color: #444;
+        margin-bottom: 15px;
+        line-height: 1.5;
+    }
+
+    .tg-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background-color: #0088cc;
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .tg-btn:hover {
+        background-color: #0077b5;
+        box-shadow: 0 4px 10px rgba(0,136,204,0.3);
+    }
+</style>
+
+<div id="tgPopup" class="tg-popup">
+    <div class="tg-header">
+        <span class="tg-title"><i class="fab fa-telegram"></i> Yangon TV</span>
+        <span class="tg-close" onclick="hideTgPopup()">&times;</span>
+    </div>
+    <div class="tg-body">
+        Yangon TV ၏ နောက်ဆုံးအပ်ဒိတ်ဇာတ်ကားများကို Telegram တွင် အချိန်နှင့်တပြေးညီ ကြည့်ရှုနိုင်ရန် Join ထားလိုက်ပါ။
+    </div>
+    <a href="https://telegram.dog/yangontv" target="_blank" class="tg-btn">
+        <i class="fab fa-telegram-plane"></i> Join Telegram Channel
+    </a>
+</div>
+
+<script>
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            document.getElementById('tgPopup').style.display = 'block';
+        }, 3000); 
+    });
+
+    function hideTgPopup() {
+        document.getElementById('tgPopup').style.display = 'none';
+    }
+</script>  </body>
 </html>
